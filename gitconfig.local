@@ -1,0 +1,14 @@
+[user]
+  name = Falko Joseph
+  email = falko@typework.com
+[alias]
+  l = !git log --graph --pretty=colored
+  cleanup = !git remote prune origin && git gc && git clean -df && git stash
+clear
+  pr = !git push -u && hub pull-request
+  wip = !git add -A && git commit -m "wip"
+  unwip = !test "`git log -n1 --pretty=format:%s`" = "wip" && git reset HEAD~1
+[pretty]
+  colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
+[credential]
+  helper = osxkeychain
