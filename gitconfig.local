@@ -4,6 +4,7 @@
 [alias]
   l = !git log --graph --pretty=colored
   cleanup = !git remote prune origin && git gc && git clean -df && git stash
+  sq = !sh -c 'git rebase -i HEAD~$1' -
 clear
   pr = !git push -u && hub pull-request
   wip = !git add -A && git commit -m "wip"
