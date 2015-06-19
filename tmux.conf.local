@@ -1,0 +1,25 @@
+# reload the tmux config with "r"
+bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
+
+# pane creation
+bind c new-window -c "#{pane_current_path}"
+bind-key b break-pane -d
+bind - split-window -v -c "#{pane_current_path}"
+bind \ split-window -h -c "#{pane_current_path}"
+
+# Pane resizing
+# Shift(small resize) + arrow key
+bind -n S-Left resize-pane -L 2
+bind -n S-Right resize-pane -R 2
+bind -n S-Down resize-pane -D 1
+bind -n S-Up resize-pane -U 1
+
+# formatting colors
+setw -g window-status-format "#[fg=white,bg=blue] #I #[bg=colour236,fg=white] #W "
+setw -g window-status-current-format "#[bg=colour220,fg=colour236] #I #[fg=white,bold,bg=colour236] #W "
+
+# set date and time to the right
+set -g status-right '#(date "+%R")'
+
+# set panes center
+set -g status-justify centre # set tabs in center
