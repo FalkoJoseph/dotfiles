@@ -1,11 +1,14 @@
 [user]
   name = Falko Joseph
-  email = falko@typework.com
+  email = falkojoseph@gmail.com
 [alias]
   l = !git log --graph --pretty=colored
   cleanup = !git remote prune origin && git gc && git clean -df && git stash
   sq = !sh -c 'git rebase -i HEAD~$1' -
-clear
+  continue = !git add -A && git rebase --continue
+  wip = !git add -A && git commit -m '[ci skip] wip'
+  upm = !git fetch origin && git rebase -i origin/master
+  upd = !git fetch origin && git rebase -i origin/develop
   pr = !git push -u && hub pull-request
   wip = !git add -A && git commit -m "wip"
   unwip = !test "`git log -n1 --pretty=format:%s`" = "wip" && git reset HEAD~1
