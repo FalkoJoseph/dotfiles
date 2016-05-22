@@ -52,7 +52,13 @@ alias gpu='git pull'
 alias gcl='git clone'
 alias gta='git tag -a -m'
 alias gf='git reflog'
+
+# -------------------------------------------------------------------
+# PHP aliases
+# -------------------------------------------------------------------
+
 alias composer='php composer.phar'
+alias refinery='php vendor/bin/refinery'
 
 # -------------------------------------------------------------------
 # Node aliases
