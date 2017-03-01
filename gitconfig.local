@@ -11,6 +11,8 @@
   upd = !git fetch origin && git rebase -i origin/develop
   pr = !git push -u && hub pull-request
   wip = !git add -A && git commit -m "wip"
+  ga = !git add -A
+  gs = !git status
   unwip = !test "`git log -n1 --pretty=format:%s`" = "wip" && git reset HEAD~1
 [pretty]
   colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
